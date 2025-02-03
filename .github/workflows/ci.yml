@@ -53,5 +53,8 @@ jobs:
           node-version: '>=18'
           cache: 'npm'
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Test
         run: npm run lint # Don't have test, just run lint for now
