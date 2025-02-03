@@ -28,7 +28,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm config set registry
+        run: npm config get registry
 
       - name: Build
         run: npm run build
