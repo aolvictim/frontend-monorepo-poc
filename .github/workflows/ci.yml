@@ -34,27 +34,23 @@ jobs:
         run: npm run build
 
   test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v4
-
-      - name: Cache turbo build setup
-        uses: actions/cache@v4
-        with:
-          path: .turbo
-          key: ${{ runner.os }}-turbo-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-turbo-
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v4
-        with:
-          node-version: '>=18'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install
-
+        
       - name: Test
         run: npm run lint # Don't have test, just run lint for now
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        
+      - name: Deploy to production
+        run: |
+          echo "Add your deployment commands here"
+          # Example: npm run deploy
