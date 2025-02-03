@@ -29,8 +29,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cat .npmrc
-          npm config get userconfig
           npm config get registry
           npm install
 
