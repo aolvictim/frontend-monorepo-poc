@@ -31,6 +31,8 @@ jobs:
         run: |
           npm config set registry https://registry.npmjs.org/
           npm install
+        env:
+          CI: true  # Ensure CI environment variable is set
 
       - name: Build
         run: npm run build
