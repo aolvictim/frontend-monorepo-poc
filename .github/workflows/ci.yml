@@ -33,7 +33,7 @@ jobs:
       - name: Build
         run: |
           npm run build
-          find apps/sk-app/build
+          find apps/sk-app
 
       - name: Test
         run: npm run lint # Don't have test, just run lint for now
