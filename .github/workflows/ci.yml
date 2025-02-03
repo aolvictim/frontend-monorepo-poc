@@ -32,7 +32,8 @@ jobs:
           cat .npmrc
           npm config get userconfig
           npm config get registry
-          
+          cat /home/runner/.npmrc
+          npm install
 
       - name: Build
         run: npm run build
