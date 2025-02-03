@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { MyCounterButton } from '@repo/ui-sk';
+	import { MyCounterButton } from '@repo/ui-react-sk';
 </script>
 
-<h1>I'm a SvelteKit app</h1>
+<h1>SvelteKit app</h1>
 <MyCounterButton />
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
