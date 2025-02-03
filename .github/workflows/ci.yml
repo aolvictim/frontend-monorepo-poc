@@ -30,7 +30,9 @@ jobs:
       - name: Install dependencies
         run: |
           cat .npmrc
-          npm install
+          npm config get userconfig
+          npm config get registry
+          
 
       - name: Build
         run: npm run build
