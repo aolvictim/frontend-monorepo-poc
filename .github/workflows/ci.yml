@@ -19,7 +19,7 @@ jobs:
           path: .turbo
           key: ${{ runner.os }}-turbo-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-turbo-${{ github.ref }}
+            ${{ runner.os }}-turbo-
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
@@ -28,11 +28,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: |
-          npm config set registry https://registry.npmjs.org/
-          npm install
-        env:
-          CI: true  # Ensure CI environment variable is set
+        run: npm install
 
       - name: Build
         run: npm run build
