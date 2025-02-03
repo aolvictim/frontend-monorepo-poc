@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
   pull_request:
     types: [opened, synchronize]
 
@@ -15,11 +15,19 @@ jobs:
 
       - name: Cache turbo build setup
         uses: actions/cache@v4
-        with: 
+        with:
           path: .turbo
           key: ${{ runner.os }}-turbo-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-turbo-
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
@@ -32,3 +40,34 @@ jobs:
 
       - name: Build
         run: npm run build
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Cache turbo build setup
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '>=18'
+          cache: 'npm'
+
+      - name: Build
+        run: npm run lint # Don't have test, just run lint for now
