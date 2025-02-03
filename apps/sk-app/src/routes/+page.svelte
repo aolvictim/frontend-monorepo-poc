@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MyCounterButton } from '@repo/ui-react-sk';
+	import { MyCounterButton } from '@repo/ui-sk';
 </script>
 
 <h1>SvelteKit app</h1>

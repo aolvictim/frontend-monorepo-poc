@@ -16,7 +16,7 @@
 		"test:unit": "vitest"
 	},
 	"dependencies": {
-		"@repo/ui-react-sk": "*"
+		"@repo/ui-sk": "*"
 	},
 	"devDependencies": {
 		"@repo/eslint-config": "*",
