@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "sk-app",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -16,7 +16,7 @@
     "test:unit": "vitest"
   },
   "dependencies": {
-    "@repo/ui": "*"
+    "@repo/ui-sk": "*"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",

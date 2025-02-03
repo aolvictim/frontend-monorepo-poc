@@ -1,5 +1,5 @@
 {
-  "name": "@repo/ui",
+  "name": "@repo/ui-sk",
   "version": "0.0.0",
   "type": "module",
   "module": "index.ts",

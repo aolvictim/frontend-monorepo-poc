@@ -14,9 +14,8 @@ Provides a skeleton for managing frontend projects with a monorepo while working
 
 ## Apps and Packages
 
-- `docs`: a [svelte-kit](https://kit.svelte.dev/) app
-- `web`: another [svelte-kit](https://kit.svelte.dev/) app
-- `ui`: a stub Svelte component library shared by both `web` and `docs` applications
+- `sk-app`: a [svelte-kit](https://kit.svelte.dev/) app
+- `ui-sk`: a stub Svelte component library used by `sk-app`
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-plugin-svelte` and `eslint-config-prettier`)
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
