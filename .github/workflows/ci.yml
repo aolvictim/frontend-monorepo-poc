@@ -35,9 +35,6 @@ jobs:
           npm run build
           find apps/sk-app
 
-      - name: Test
-        run: npm run lint # Don't have test, just run lint for now
-
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -45,6 +42,9 @@ jobs:
           path: |
             apps/react-app/dist
             apps/sk-app/build
+
+      - name: Test
+        run: npm run lint # Don't have test, just run lint for now
 
   deploy:
     needs: build
