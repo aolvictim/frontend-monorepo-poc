@@ -1,6 +1,6 @@
 # Frontend Monorepo Proof of Concept
 
-Provides a skeleton for managing frontend projects with a monorepo while working out the details.
+POC for managing frontend projects with a monorepo while working out the details. [See live demo here](https://aolvictim.github.io/frontend-monorepo-poc/shell-app)
 
 ## Objectives
 
