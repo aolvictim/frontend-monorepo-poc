@@ -27,6 +27,10 @@
 		☰
 	</button>
 	
+	{#if isMenuOpen}
+		<div class="overlay" on:click={toggleMenu}></div>
+	{/if}
+	
 	<nav class:open={isMenuOpen}>
 		<ul>
 			<li>
@@ -78,12 +82,24 @@
 		display: block;
 	}
 
+	.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 90;
+		display: none;
+	}
+
 	nav {
 		background-color: #f0f0f0;
 		position: fixed;
 		top: 0;
-		left: -250px;
-		width: 250px;
+		left: -100%;
+		width: 80%;  /* Changed from 250px to 80% for mobile */
+		max-width: 300px;
 		height: 100vh;
 		transition: left 0.3s ease;
 		z-index: 100;
@@ -95,11 +111,14 @@
 		left: 0;
 	}
 
+	nav.open + .overlay {
+		display: block;
+	}
+
 	main {
 		flex: 1;
-		padding: 1rem;
-		padding-top: 4rem;
 		width: 100%;
+		padding-top: 4rem; /* Keep only the top padding for mobile menu button */
 	}
 
 	ul {
@@ -134,10 +153,8 @@
 
 	.content-frame {
 		width: 100%;
-		height: calc(100vh - 5rem);
+		height: calc(100vh - 4rem);
 		border: none;
-		border-radius: 4px;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	}
 
 	/* Tablet and Desktop styles */
@@ -150,6 +167,10 @@
 			display: none;
 		}
 
+		.overlay {
+			display: none !important;
+		}
+
 		nav {
 			position: relative;
 			left: 0;
@@ -160,12 +181,11 @@
 		}
 
 		main {
-			padding: 1rem;
-			padding-top: 1rem;
+			padding-top: 0;
 		}
 
 		.content-frame {
-			height: calc(100vh - 2rem);
+			height: 100vh;
 		}
 	}
 </style>
