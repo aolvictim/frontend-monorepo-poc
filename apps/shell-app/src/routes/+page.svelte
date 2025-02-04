@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
 	let currentPage = '';
 	let content = '';
 
@@ -20,17 +18,19 @@
 	<nav>
 		<ul>
 			<li>
-				<button 
+				<button
 					on:click={() => loadPage('https://aolvictim.github.io/frontend-monorepo-poc/react-app')}
-					class:active={currentPage === 'http://localhost:5173/frontend-monorepo-poc/react-app/'}>
-					React App
+					class:active={currentPage === 'http://localhost:5173/frontend-monorepo-poc/react-app/'}
+				>
+					Remote React App
 				</button>
 			</li>
 			<li>
-				<button 
+				<button
 					on:click={() => loadPage('https://aolvictim.github.io/frontend-monorepo-poc/sk-app')}
-					class:active={currentPage === 'https://aolvictim.github.io/frontend-monorepo-poc/sk-app'}>
-					SvelteKit App
+					class:active={currentPage === 'https://aolvictim.github.io/frontend-monorepo-poc/sk-app'}
+				>
+					Remote SvelteKit App
 				</button>
 			</li>
 		</ul>
