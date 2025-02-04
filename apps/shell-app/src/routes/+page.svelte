@@ -43,6 +43,8 @@
 	{/if}
 
 	<nav class:open={isMenuOpen}>
+		<h2>shell-app</h2>
+		<h3>Remote Apps</h3>
 		<ul>
 			<li>
 				<button
@@ -63,7 +65,16 @@
 				</button>
 			</li>
 		</ul>
-		<MyCounterButton />
+		<h3>@repo/svelte-components</h3>
+		<ul>
+			<li>Counter 1: <MyCounterButton /></li>
+			<li>Counter 2: <MyCounterButton /></li>
+			<li>Counter 3: <MyCounterButton /></li>
+		</ul>
+		<h3>Remote svelte components</h3>
+		<ul>
+			<li></li>
+		</ul>
 	</nav>
 	<main>
 		{#if content}

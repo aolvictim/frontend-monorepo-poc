@@ -4,14 +4,16 @@ POC for managing frontend projects with a monorepo while working out the details
 
 ## Objectives
 
-- [X] Project structure. How modules are organized.
-- [X] Excactly what tools to use to manage the monorepo. We use Turborepo
-- [X] Reusable shared components.
-- [X] Allow both React app and SveletKit app to be composed into a Shell App.
+- [x] Project structure. How modules are organized.
+- [x] Excactly what tools to use to manage the monorepo. We use Turborepo
+- [ ] Reusable shared components.
+  - [x] Local shared components.
+  - [ ] Remote shared components via Module Federation.
+- [x] Allow both React app and SveletKit app to be composed into a Shell App.
 - [ ] CI/CD Pipeline:
   - [ ] Deploy to multiple environments (test, staging, prod, etc.)
   - [ ] ~~Each app has own AWS stack and can be deployed independently.~~
-  - [X] Incremental build. Only those changed are rebuild.
+  - [x] Incremental build. Only those changed are rebuild.
 
 ## Apps and Packages
 
@@ -24,10 +26,12 @@ POC for managing frontend projects with a monorepo while working out the details
 - `pacakges/typescript-config`: Shared `typescript` configurations
 
 ## Running Locally
+
 In project root
+
 ```bash
 npm install
 npm run dev
 ```
-Open the `shell-app` url in browser.
 
+Open the `shell-app` url in browser.
