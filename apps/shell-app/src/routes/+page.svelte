@@ -9,7 +9,7 @@
 			const response = await fetch(url);
 			content = await response.text();
 			if (window.innerWidth < 768) {
-				isMenuOpen = false; // Close menu on mobile after selection
+				isMenuOpen = false;
 			}
 		} catch (error) {
 			console.error('Failed to load page:', error);
@@ -20,6 +20,12 @@
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
 	}
+
+	function handleKeyDown(event: KeyboardEvent) {
+		if (event.key === 'Escape' && isMenuOpen) {
+			toggleMenu();
+		}
+	}
 </script>
 
 <div class="layout">
@@ -28,7 +34,12 @@
 	</button>
 	
 	{#if isMenuOpen}
-		<div class="overlay" on:click={toggleMenu}></div>
+		<button
+			class="overlay"
+			on:click={toggleMenu}
+			on:keydown={handleKeyDown}
+			aria-label="Close menu overlay"
+		></button>
 	{/if}
 	
 	<nav class:open={isMenuOpen}>
@@ -43,8 +54,8 @@
 			</li>
 			<li>
 				<button
-					on:click={() => loadPage('https://aolvictim.github.io/frontend-monorepo-poc/sk-app')}
-					class:active={currentPage === 'https://aolvictim.github.io/frontend-monorepo-poc/sk-app'}
+					on:click={() => loadPage('https://aolvictim.github.io/frontend-monorepo-poc/svelte-app')}
+					class:active={currentPage === 'https://aolvictim.github.io/frontend-monorepo-poc/svelte-app'}
 				>
 					Remote SvelteKit App
 				</button>
@@ -90,7 +101,8 @@
 		height: 100%;
 		background: rgba(0, 0, 0, 0.5);
 		z-index: 90;
-		display: none;
+		border: none;
+		cursor: pointer;
 	}
 
 	nav {
@@ -98,7 +110,7 @@
 		position: fixed;
 		top: 0;
 		left: -100%;
-		width: 80%;  /* Changed from 250px to 80% for mobile */
+		width: 80%;
 		max-width: 300px;
 		height: 100vh;
 		transition: left 0.3s ease;
@@ -111,14 +123,10 @@
 		left: 0;
 	}
 
-	nav.open + .overlay {
-		display: block;
-	}
-
 	main {
 		flex: 1;
 		width: 100%;
-		padding-top: 4rem; /* Keep only the top padding for mobile menu button */
+		padding-top: 4rem;
 	}
 
 	ul {
@@ -157,7 +165,6 @@
 		border: none;
 	}
 
-	/* Tablet and Desktop styles */
 	@media (min-width: 768px) {
 		.layout {
 			flex-direction: row;

@@ -16,7 +16,7 @@
 		"test:unit": "vitest"
 	},
 	"dependencies": {
-		"@repo/ui-sk": "*"
+		"@repo/ui-svelte": "*"
 	},
 	"devDependencies": {
 		"@repo/eslint-config": "*",
