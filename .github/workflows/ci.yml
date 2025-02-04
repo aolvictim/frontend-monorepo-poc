@@ -40,6 +40,7 @@ jobs:
           path: |
             apps/react-app/dist
             apps/sk-app/build
+            apps/shell-app/build
 
       - name: Test
         run: npm run lint # Don't have test, just run lint for now
@@ -67,6 +68,7 @@ jobs:
           mkdir -p pages
           mv dist/react-app/dist pages/react-app
           mv dist/sk-app/build pages/sk-app
+          mv dist/shell-app/build pages/shell-app
 
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
