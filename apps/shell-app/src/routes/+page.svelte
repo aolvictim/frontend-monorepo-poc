@@ -21,15 +21,15 @@
 		<ul>
 			<li>
 				<button 
-					on:click={() => loadPage('http://localhost:5173/frontend-monorepo-poc/react-app/')}
+					on:click={() => loadPage('https://aolvictim.github.io/frontend-monorepo-poc/react-app')}
 					class:active={currentPage === 'http://localhost:5173/frontend-monorepo-poc/react-app/'}>
 					React App
 				</button>
 			</li>
 			<li>
 				<button 
-					on:click={() => loadPage('http://localhost:5174/')}
-					class:active={currentPage === 'http://localhost:5174/'}>
+					on:click={() => loadPage('https://aolvictim.github.io/frontend-monorepo-poc/sk-app')}
+					class:active={currentPage === 'https://aolvictim.github.io/frontend-monorepo-poc/sk-app'}>
 					SvelteKit App
 				</button>
 			</li>
