@@ -29,10 +29,8 @@
 </script>
 
 <div class="layout">
-	<button class="menu-toggle" on:click={toggleMenu} aria-label="Toggle menu">
-		☰
-	</button>
-	
+	<button class="menu-toggle" on:click={toggleMenu} aria-label="Toggle menu"> ☰ </button>
+
 	{#if isMenuOpen}
 		<button
 			class="overlay"
@@ -41,13 +39,14 @@
 			aria-label="Close menu overlay"
 		></button>
 	{/if}
-	
+
 	<nav class:open={isMenuOpen}>
 		<ul>
 			<li>
 				<button
 					on:click={() => loadPage('https://aolvictim.github.io/frontend-monorepo-poc/react-app')}
-					class:active={currentPage === 'https://aolvictim.github.io/frontend-monorepo-poc/react-app'}
+					class:active={currentPage ===
+						'https://aolvictim.github.io/frontend-monorepo-poc/react-app'}
 				>
 					Remote React App
 				</button>
@@ -55,7 +54,8 @@
 			<li>
 				<button
 					on:click={() => loadPage('https://aolvictim.github.io/frontend-monorepo-poc/svelte-app')}
-					class:active={currentPage === 'https://aolvictim.github.io/frontend-monorepo-poc/svelte-app'}
+					class:active={currentPage ===
+						'https://aolvictim.github.io/frontend-monorepo-poc/svelte-app'}
 				>
 					Remote SvelteKit App
 				</button>
@@ -147,7 +147,9 @@
 		background: none;
 		cursor: pointer;
 		border-radius: 4px;
-		transition: background-color 0.2s, color 0.2s;
+		transition:
+			background-color 0.2s,
+			color 0.2s;
 	}
 
 	button:hover {

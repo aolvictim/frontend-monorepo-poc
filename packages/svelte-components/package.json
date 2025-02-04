@@ -1,5 +1,5 @@
 {
-  "name": "@repo/ui-svelte",
+  "name": "@repo/svelte-components",
   "version": "0.0.0",
   "type": "module",
   "module": "index.ts",

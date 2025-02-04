@@ -5,7 +5,7 @@ var react_1 = require('react');
 var client_1 = require('react-dom/client');
 require('./style.css');
 var typescript_svg_1 = require('/typescript.svg');
-var ui_react_1 = require('@repo/ui-react');
+var ui_react_1 = require('@repo/react-components');
 var App = function () {
   return (0, jsx_runtime_1.jsxs)('div', {
     children: [
