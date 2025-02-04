@@ -12,7 +12,7 @@ POC for managing frontend projects with a monorepo while working out the details
 - [x] Allow both React app and SveletKit app to be composed into a Shell App.
 - [ ] CI/CD Pipeline:
   - [ ] Deployment: Per app, per environments (test, staging, prod, etc.)
-  - [x] Incremental build. Only those changed are rebuild.
+  - [x] Incremental build. Only those updated modules are rebuilt.
 
 ## Apps and Packages
 
