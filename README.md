@@ -11,8 +11,7 @@ POC for managing frontend projects with a monorepo while working out the details
   - [ ] Remote shared components via Module Federation.
 - [x] Allow both React app and SveletKit app to be composed into a Shell App.
 - [ ] CI/CD Pipeline:
-  - [ ] Deploy to multiple environments (test, staging, prod, etc.)
-  - [ ] ~~Each app has own AWS stack and can be deployed independently.~~
+  - [ ] Deployment: Per app, per environments (test, staging, prod, etc.)
   - [x] Incremental build. Only those changed are rebuild.
 
 ## Apps and Packages
