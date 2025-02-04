@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client';
 import './style.css';
 import typescriptLogo from '/typescript.svg';
 import viteLogo from '/vite.svg';
-import { Header, Counter } from '@repo/ui-react';
+import { Header, Counter } from '@repo/react-components';
 
 const App = () => (
   <div>

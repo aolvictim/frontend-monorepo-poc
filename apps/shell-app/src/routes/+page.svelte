@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { MyCounterButton } from '@repo/svelte-components';
+
 	let currentPage = '';
 	let content = '';
 	let isMenuOpen = false;
@@ -61,6 +63,7 @@
 				</button>
 			</li>
 		</ul>
+		<MyCounterButton />
 	</nav>
 	<main>
 		{#if content}
